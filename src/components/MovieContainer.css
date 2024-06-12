@@ -1,0 +1,55 @@
+.movie-container {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-family: 'Arial', sans-serif;
+}
+
+.movie-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movie-header h1 {
+  font-size: 2em;
+  margin: 0;
+}
+
+.movie-year {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 0.9em;
+}
+
+.movie-details {
+  margin-top: 20px;
+}
+
+.movie-description {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.movie-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.movie-table td {
+  padding: 10px 0;
+}
+
+.movie-table td:first-child {
+  font-weight: bold;
+  width: 120px;
+}
+
+.movie-table td:last-child {
+  text-align: left;
+}

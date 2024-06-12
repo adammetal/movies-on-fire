@@ -5,10 +5,12 @@ import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Movies from "./Pages/Movies";
 
-import "./index.css";
 import GuestOnly from "./components/GuestOnly";
 import AuthOnly from "./components/AuthOnly";
 import { ThemeProvider } from "./ThemeProvider";
+
+import "./index.css";
+import MoviePage from "./Pages/MoviePage";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +33,14 @@ const router = createBrowserRouter([
       </AuthOnly>
     ),
   },
+  {
+    path: "movie/:id",
+    element: (
+      <AuthOnly>
+        <MoviePage />
+      </AuthOnly>
+    )
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
