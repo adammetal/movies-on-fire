@@ -9,7 +9,7 @@ import "./Home.css";
 export default function HomePage() {
   const [user, loading] = useAuthState(auth);
 
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   return (
     <div className="home-page">
@@ -28,17 +28,14 @@ export default function HomePage() {
             magic begin. 🚀🎥 #WatchBetter #FlickFindr Feel free to tweak it as
             needed!
           </article>
-          <article>
-            <select value={theme} onChange={(e) => setTheme(e.currentTarget.value)}>
-              <option value="light">Light</option>
-              <option value="dark">Dark</option>
-            </select>
-          </article>
+
           <article>
             {loading ? null : !user ? (
               <Link to="/login">Login</Link>
             ) : (
-              <Link to="/movies" className={theme}>Movies</Link>
+              <Link to="/movies" className={theme}>
+                Movies
+              </Link>
             )}
           </article>
         </section>
