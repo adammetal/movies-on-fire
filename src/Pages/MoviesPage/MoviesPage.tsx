@@ -1,4 +1,4 @@
-import Movie from "./components/MoviesListItem";
+import MoviesListItem from "./components/MoviesListItem";
 import MovieForm from "../../components/MovieForm";
 import { useMoviesCollection } from "../../hooks/useMoviesCollection";
 import { addNewMovie } from "../../service/movies";
@@ -25,7 +25,7 @@ export default function MoviesPage() {
         </header>
         <section>
           {values?.map((movie) => (
-            <Movie key={movie.id} movie={movie} />
+            <MoviesListItem key={movie.id} movie={movie} />
           ))}
         </section>
         <header>
