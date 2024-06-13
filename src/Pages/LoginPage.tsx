@@ -3,7 +3,7 @@ import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import "./Login.css";
 import { Navigate } from "react-router-dom";
 
-export default function Login() {
+export default function LoginPage() {
   const [signIn, user, loading] = useSignInWithGoogle(auth);
 
   function handleGoogleAuth() {

@@ -16,7 +16,7 @@ const MovieForm = ({ onSave }: MovieFormProps) => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    
+
     onSave({
       title,
       year: Number(year),

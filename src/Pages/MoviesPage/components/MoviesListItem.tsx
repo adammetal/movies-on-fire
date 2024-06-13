@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import { type Movie } from "../types/Movie";
+import { type Movie } from "../../../types/Movie";
 
 interface MovieProps {
   movie: Movie;
 }
 
-const Movie = ({ movie }: MovieProps) => {
+export default function MoviesListItem({ movie }: MovieProps) {
   return (
     <article>
       <header>
@@ -34,6 +34,4 @@ const Movie = ({ movie }: MovieProps) => {
       </table>
     </article>
   );
-};
-
-export default Movie;
+}

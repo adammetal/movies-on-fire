@@ -1,12 +1,12 @@
-import Movie from "../components/Movie";
-import MovieForm from "../components/MovieForm";
-import { useMoviesCollection } from "../hooks/useMoviesCollection";
-import { addNewMovie } from "../service/movies";
-import { NewMovie } from "../types/Movie";
+import Movie from "./components/MoviesListItem";
+import MovieForm from "../../components/MovieForm";
+import { useMoviesCollection } from "../../hooks/useMoviesCollection";
+import { addNewMovie } from "../../service/movies";
+import { NewMovie } from "../../types/Movie";
 
-import "./Movies.css";
+import "./MoviesPage.css";
 
-export default function Movies() {
+export default function MoviesPage() {
   const [values, loading] = useMoviesCollection();
 
   async function handleMovieCreate(movie: NewMovie) {

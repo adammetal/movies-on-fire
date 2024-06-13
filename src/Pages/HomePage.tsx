@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import auth from "../firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
-
-import "./Home.css";
 import { useContext } from "react";
 import { ThemeContext } from "../ThemeProvider";
 
-export default function Home() {
+import "./Home.css";
+
+export default function HomePage() {
   const [user, loading] = useAuthState(auth);
 
   const { theme, setTheme } = useContext(ThemeContext);

@@ -8,3 +8,5 @@ export interface Movie {
 }
 
 export type NewMovie = Omit<Movie, "id">;
+
+export type PatchMovie = Partial<Movie>;

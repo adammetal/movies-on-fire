@@ -1,12 +1,12 @@
-import { Movie } from '../types/Movie';
+import { Movie as MovieType } from '../../../types/Movie';
 
-import './MovieContainer.css';
+import './Movie.css';
 
-interface MovieContainerProps {
-  movie: Movie;
+interface MovieProps {
+  movie: MovieType;
 }
 
-const MovieContainer = ({ movie }: MovieContainerProps) => {
+export default function Movie({ movie }: MovieProps) {
   return (
     <div className="movie-container">
       <header className="movie-header">
@@ -30,6 +30,4 @@ const MovieContainer = ({ movie }: MovieContainerProps) => {
       </section>
     </div>
   );
-};
-
-export default MovieContainer;
+}

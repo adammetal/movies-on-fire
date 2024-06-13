@@ -1,27 +1,27 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Home from "./Pages/Home";
-import Login from "./Pages/Login";
-import Movies from "./Pages/Movies";
+import HomePage from "./Pages/HomePage";
+import LoginPage from "./Pages/LoginPage";
+import MoviesPage from "./Pages/MoviesPage";
+import MoviePage from "./Pages/MoviePage";
 
 import GuestOnly from "./components/GuestOnly";
 import AuthOnly from "./components/AuthOnly";
 import { ThemeProvider } from "./ThemeProvider";
 
 import "./index.css";
-import MoviePage from "./Pages/MoviePage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <HomePage />,
   },
   {
     path: "login",
     element: (
       <GuestOnly>
-        <Login />
+        <LoginPage />
       </GuestOnly>
     ),
   },
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
     path: "movies",
     element: (
       <AuthOnly>
-        <Movies />
+        <MoviesPage />
       </AuthOnly>
     ),
   },
