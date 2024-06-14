@@ -4,16 +4,15 @@ import { useMovieDocument } from "../../hooks/useMovieDocument";
 import Comments from "./components/Comments";
 import useMovieComments from "../../hooks/useMovieComments";
 import CommentForm from "../../components/CommentForm";
-import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../../firebase/auth";
 import { NewComment } from "../../types/Comment";
 import { addNewComment } from "../../service/comments";
+import { useAuthUnsafe } from "../../UserProvider";
 
 const MoviePage = () => {
   const { id } = useParams<{ id: string }>();
   const [movie, movieLoading] = useMovieDocument(id!);
   const [comments, commentsLoding] = useMovieComments(id!);
-  const [user] = useAuthState(auth);
+  const user = useAuthUnsafe();
 
   function handleAddComment({
     body,
@@ -26,7 +25,7 @@ const MoviePage = () => {
       body,
       rating,
       movieId: id!,
-      author: user?.displayName ?? user?.email ?? "anonymus",
+      author: user.displayName ?? user.email ?? "anonymus",
     };
 
     addNewComment(comment);

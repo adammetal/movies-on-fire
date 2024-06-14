@@ -11,6 +11,7 @@ import AuthOnly from "./components/AuthOnly";
 import { ThemeProvider } from "./ThemeProvider";
 
 import "./index.css";
+import { UserProvider } from "./UserProvider";
 
 const router = createBrowserRouter([
   {
@@ -39,14 +40,16 @@ const router = createBrowserRouter([
       <AuthOnly>
         <MoviePage />
       </AuthOnly>
-    )
-  }
+    ),
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <ThemeProvider>
-      <RouterProvider router={router} />
-    </ThemeProvider>
+    <UserProvider>
+      <ThemeProvider>
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </UserProvider>
   </React.StrictMode>
 );
